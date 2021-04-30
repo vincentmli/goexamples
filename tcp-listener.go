@@ -10,7 +10,19 @@
             network interface to listen on (default "lo")
       -port string
             ports to listen (default "55025:55030")
+for example:
 
+#./tcp-listener -cidr="10.169.72.0/28" -device="enp0s3" -port="50000:50060"
+
+Ctrl + C to stop the program
+
+./tcp-listener -cidr="10.169.72.0/28" -device="enp0s3" -port="50000:50060"
+- Ctrl+C pressed in Terminal
+- Run Clean Up - Remove IPs
+- Good bye!
+
+when program stops, it will automatically removes the IP addresses added
+to the interface
 
  when giving large number of ips and ports, it may complains
  "accept4: too many open files...", increase the ulimit number,
