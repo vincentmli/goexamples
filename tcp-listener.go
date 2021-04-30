@@ -3,6 +3,15 @@
  compile static build
  CGO_ENABLED=0 GOOS=linux go build -a  -o tcp-listener tcp-listener.go
 
+     Usage of ./tcp-listener:
+      -cidr string
+            ip cidr to listen (default "127.1.0.0/24")
+      -device string
+            network interface to listen on (default "lo")
+      -port string
+            ports to listen (default "55025:55030")
+
+
  when giving large number of ips and ports, it may complains
  "accept4: too many open files...", increase the ulimit number,
  manually remove the ip address and try again
