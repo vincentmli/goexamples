@@ -2,6 +2,13 @@
  version go1.15.5 linux/amd64 on Ubuntu 20.04
  compile static build
  CGO_ENABLED=0 GOOS=linux go build -a  -o tcp-listener tcp-listener.go
+
+ when giving large number of ips and ports, it may complains
+ "accept4: too many open files...", increase the ulimit number,
+ manually remove the ip address and try again
+ #ulimit -n 1000000
+ #for i in $(seq start, end); do ip a del 10.169.72.$i dev <interface>; done
+
 */
 
 package main
