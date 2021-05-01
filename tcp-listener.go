@@ -30,6 +30,17 @@ to the interface
  #ulimit -n 1000000
  #for i in $(seq start, end); do ip a del 10.169.72.$i dev <interface>; done
 
+ you could also run it with nohup so when you exit your terminal session, the
+ program continues to run
+
+ nohup ./tcp-listener ...&
+ exit
+
+ new terminal session to stop the program
+
+ kill -15 $(pidof tcp-listener)
+
+
 */
 
 package main
